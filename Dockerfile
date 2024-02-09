@@ -15,11 +15,12 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 COPY docker/middleware.js ./src
 
-ARG DATABASE_TYPE
 ARG BASE_PATH
 
-ENV DATABASE_TYPE $DATABASE_TYPE
+ENV DATABASE_TYPE mysql
 ENV BASE_PATH $BASE_PATH
+
+ENV SKIP_DB_CHECK 1
 
 ENV NEXT_TELEMETRY_DISABLED 1
 

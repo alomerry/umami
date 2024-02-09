@@ -9,7 +9,7 @@ const contentSecurityPolicy = [
   `script-src 'self' 'unsafe-eval' 'unsafe-inline'`,
   `style-src 'self' 'unsafe-inline'`,
   `connect-src 'self' api.umami.is`,
-  `frame-ancestors 'self' ${process.env.ALLOWED_FRAME_URLS || ''}`,
+  `frame-ancestors 'self' 'admin.alomerry.com'`,
 ];
 
 const headers = [

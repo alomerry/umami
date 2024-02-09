@@ -44,7 +44,8 @@ async function checkConnection() {
 
     success('Database connection successful.');
   } catch (e) {
-    throw new Error('Unable to connect to the database.');
+    const databaseType = getDatabaseType();
+    throw new Error(`Unable to connect to the database [${databaseType}]:[${e}].`);
   }
 }
 
